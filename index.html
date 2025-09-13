@@ -3,52 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Kim Jong Un's Guide to Having Fun</title>
-  <meta name="description" content="A playful and fun website based on Kim Jong Un's Guide to Having Fun">
+  <meta name="description" content="A fun, satirical website based on Kim Jong Un's Guide to Having Fun">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f5f5f5;
+      font-family: 'Arial Black', Arial, sans-serif;
+      background-color: #b30000; /* deep red background */
+      color: #fff;
       margin: 0;
       padding: 20px;
+      text-align: center;
     }
 
     h1 {
-      color: red;
+      font-size: 4em;
       font-weight: bold;
-      font-size: 3em;
-      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 40px;
+      text-decoration: underline;
     }
 
     p {
-      max-width: 800px;
-      margin: 10px auto;
-      font-size: 1.2em;
-      line-height: 1.6em;
+      max-width: 900px;
+      margin: 15px auto;
+      font-size: 1.3em;
+      line-height: 1.8em;
       font-weight: bold;
-      color: #333;
     }
 
     img {
-      max-width: 400px;
+      max-width: 450px;
+      width: 90%;
       height: auto;
-      margin: 20px 0;
+      display: block;
+      margin: 30px auto;
     }
 
     button {
-      margin: 20px 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 5px;
-      background-color: #ff0000;
-      color: white;
+      margin: 20px 10px;
+      padding: 15px 30px;
+      font-size: 1.2em;
       font-weight: bold;
       border: none;
-      font-size: 1em;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ffcc00;
+      color: #b30000;
+      text-shadow: 1px 1px #000;
     }
 
     button:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
       transition: 0.2s;
     }
 
@@ -65,84 +75,103 @@
 </head>
 <body>
 
-  <h1>Kim Jong Un's Guide to Having Fun</h1>
+<h1>Kim Jong Un's Guide to Having Fun</h1>
 
-  <img src="king-removebg-preview.png" alt="Kim Jong Un Party" />
+<img src="king-removebg-preview.png" alt="Kim Jong Un Party Image" />
 
-  <p>Welcome to the ultimate guide for partying the North Korean way! This website shows you how to have fun responsibly, according to the one and only Kim Jong Un.</p>
+<p>Welcome, comrades, to the ultimate guide to having fun in the most supreme way imaginable. Kim Jong Un himself has handpicked these tips to ensure your celebrations are maximized for happiness and compliance!</p>
 
-  <p>First, embrace the party spirit! Decorate with bright colors, wear party hats, and never forget to smile like the supreme leader would approve.</p>
+<h2>Step 1: Prepare for the Party</h2>
+<p>Always start with decorations. Bright colors, banners, and of course, party hats for everyone! A true celebration is impossible without visual splendor.</p>
+<p>Arrange the room so that every guest can see the supreme leader image or homage display. Placement is key for maximum morale.</p>
 
-  <p>Second, follow the mock guidelines for celebrations: state-sanctioned games, hilarious parades, and synchronized dance moves that entertain everyone.</p>
+<h2>Step 2: Dress to Impress</h2>
+<p>Every attendee should wear their best uniform, with accessories that spark joy. Matching socks are encouraged. Confidence is mandatory.</p>
+<p>Don’t forget party hats! The leader’s hat sets the tone, so ensure everyone mimics the supreme style.</p>
 
-  <p>Third, enjoy cultural satire responsibly. The absurdity is part of the fun. Laugh at the chaos, embrace the jokes, and remember: it’s all playful.</p>
+<h2>Step 3: Games and Activities</h2>
+<p>Organize games that are fun, structured, and allow everyone to compete fairly. Dance-offs, synchronized routines, and “tribute challenges” are encouraged.</p>
+<p>Keep scoreboards visible, but don’t forget that participation is the ultimate reward. Winning is optional — fun is mandatory.</p>
 
-  <p>Fourth, visual elements matter! A party hat image makes everything better. Keep your decorations bold and memorable.</p>
+<h2>Step 4: Music and Dancing</h2>
+<p>Play music that inspires energy. Marching songs mixed with celebratory beats create the perfect festive environment.</p>
+<p>Encourage everyone to move. Dancing improves morale, laughter, and creates lasting memories. The leader’s favorite moves are optional but admired!</p>
 
-  <button onclick="launchConfetti()">🎉 Launch Confetti</button>
+<h2>Step 5: Food and Snacks</h2>
+<p>Prepare small but delicious treats. Arrange them neatly on trays. Sharing is encouraged to build comradery.</p>
+<p>Label snacks humorously to boost the mood — “Supreme Sweets,” “Power Popcorn,” and “Victory Veggies.”</p>
 
-  <canvas id="confettiCanvas"></canvas>
+<h2>Step 6: Celebration Etiquette</h2>
+<p>Always cheer for fellow attendees. Laugh together, enjoy each moment, and maintain the spirit of unity. Remember, fun is collective, not individual.</p>
+<p>Compliment each other, dance together, and capture memories with group photos. A true celebration leaves no one behind.</p>
 
-  <script>
-    // -------------------
-    // Confetti
-    // -------------------
-    const canvas = document.getElementById('confettiCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    let confettiParticles = [];
+<h2>Step 7: Cultural Appreciation</h2>
+<p>Learn a new song, recite a poem, or perform a small skit. Humor and creativity are encouraged but must remain within the spirit of fun and respect.</p>
+<p>The best celebrations include activities that surprise, delight, and keep everyone engaged. The supreme leader would approve!</p>
 
-    function launchConfetti() {
-      for(let i=0;i<150;i++){
-        confettiParticles.push({
-          x: Math.random()*canvas.width,
-          y: Math.random()*canvas.height - canvas.height,
-          r: Math.random()*6 + 4,
-          d: Math.random()*20 + 10,
-          color: `hsl(${Math.random()*360},100%,50%)`,
-          tilt: Math.random()*10 - 10
-        });
-      }
-      requestAnimationFrame(drawConfetti);
-    }
+<button onclick="launchConfetti()">🎉 Launch Confetti</button>
 
-    function drawConfetti() {
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      confettiParticles.forEach((p,i)=>{
-        ctx.beginPath();
-        ctx.lineWidth = p.r;
-        ctx.strokeStyle = p.color;
-        ctx.moveTo(p.x + p.tilt + p.r/2, p.y);
-        ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r/2);
-        ctx.stroke();
-        p.y += (Math.cos(p.d) + 3 + p.r/2)/2;
-        p.tilt += 0.1;
-        if(p.y > canvas.height) confettiParticles.splice(i,1);
+<canvas id="confettiCanvas"></canvas>
+
+<script>
+  // -------------------
+  // Confetti
+  // -------------------
+  const canvas = document.getElementById('confettiCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  let confettiParticles = [];
+
+  function launchConfetti() {
+    for(let i=0;i<200;i++){
+      confettiParticles.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height - canvas.height,
+        r: Math.random()*6 + 4,
+        d: Math.random()*20 + 10,
+        color: `hsl(${Math.random()*360},100%,50%)`,
+        tilt: Math.random()*10 - 10
       });
-      if(confettiParticles.length>0) requestAnimationFrame(drawConfetti);
     }
+    requestAnimationFrame(drawConfetti);
+  }
 
-    // -------------------
-    // Notification
-    // -------------------
-    function requestNukeNotification() {
-      if (!("Notification" in window)) {
-        alert("This browser does not support notifications.");
-      } else if (Notification.permission === "granted") {
-        new Notification("Send Nukes");
-      } else if (Notification.permission !== "denied") {
-        Notification.requestPermission().then(permission => {
-          if (permission === "granted") {
-            new Notification("Send Nukes");
-          }
-        });
-      }
+  function drawConfetti() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confettiParticles.forEach((p,i)=>{
+      ctx.beginPath();
+      ctx.lineWidth = p.r;
+      ctx.strokeStyle = p.color;
+      ctx.moveTo(p.x + p.tilt + p.r/2, p.y);
+      ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r/2);
+      ctx.stroke();
+      p.y += (Math.cos(p.d) + 3 + p.r/2)/2;
+      p.tilt += 0.1;
+      if(p.y > canvas.height) confettiParticles.splice(i,1);
+    });
+    if(confettiParticles.length>0) requestAnimationFrame(drawConfetti);
+  }
+
+  // -------------------
+  // Notifications
+  // -------------------
+  function requestNukeNotification() {
+    if (!("Notification" in window)) {
+      alert("This browser does not support notifications.");
+    } else if (Notification.permission === "granted") {
+      new Notification("Send Nukes");
+    } else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("Send Nukes");
+        }
+      });
     }
+  }
 
-    // Ask notification on load
-    window.addEventListener('load', requestNukeNotification);
-  </script>
+  window.addEventListener('load', requestNukeNotification);
+</script>
 
 </body>
 </html>
