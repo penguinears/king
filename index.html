@@ -2,48 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kim Jong Un's Guide to Having Fun</title>
-  <meta name="description" content="A fun, satirical website based on Kim Jong Un's Guide to Having Fun">
   <style>
     body {
-      font-family: 'Arial Black', Arial, sans-serif;
-      background-color: #b30000; /* deep red background */
-      color: #fff;
+      font-family: 'Arial Black', sans-serif;
+      background-color: #b30000;
+      color: white;
       margin: 0;
       padding: 20px;
       text-align: center;
     }
-
     h1 {
       font-size: 4em;
-      font-weight: bold;
-      color: #fff;
       text-shadow: 2px 2px #000;
-      margin-bottom: 20px;
     }
-
     h2 {
-      font-size: 2em;
+      font-size: 2.5em;
       margin-top: 40px;
       text-decoration: underline;
     }
-
     p {
       max-width: 900px;
       margin: 15px auto;
       font-size: 1.3em;
       line-height: 1.8em;
-      font-weight: bold;
     }
-
     img {
       max-width: 450px;
       width: 90%;
       height: auto;
-      display: block;
       margin: 30px auto;
     }
-
     button {
       margin: 20px 10px;
       padding: 15px 30px;
@@ -56,12 +46,10 @@
       color: #b30000;
       text-shadow: 1px 1px #000;
     }
-
     button:hover {
       transform: scale(1.1);
       transition: 0.2s;
     }
-
     canvas {
       position: fixed;
       pointer-events: none;
@@ -109,14 +97,33 @@
 <p>Learn a new song, recite a poem, or perform a small skit. Humor and creativity are encouraged but must remain within the spirit of fun and respect.</p>
 <p>The best celebrations include activities that surprise, delight, and keep everyone engaged. The supreme leader would approve!</p>
 
+<h2>Traditional North Korean Games</h2>
+<p>Engage in these traditional games to enhance your celebration:</p>
+<ul>
+  <li><strong>Yut-Nori</strong>: A board game played with four wooden sticks and game pieces, promoting teamwork and strategy.</li>
+  <li><strong>Gonggi</strong>: A game using small pebbles or plastic stones, testing hand-eye coordination and dexterity.</li>
+  <li><strong>Jegichagi</strong>: A game where players kick a paper shuttlecock into the air, aiming to keep it aloft.</li>
+  <li><strong>Tuho</strong>: A game where players throw sticks into a canister, requiring precision and skill.</li>
+  <li><strong>Jachigi</strong>: A traditional game similar to tic-tac-toe, played with stones on the ground.</li>
+</ul>
+
+<h2>Play the National Anthem</h2>
+<p>Experience the patriotic spirit by listening to the national anthem:</p>
+<button onclick="playAnthem()">Play National Anthem</button>
+
+<script>
+  function playAnthem() {
+    const anthemUrl = 'https://www.youtube.com/watch?v=LbPVSOSBfvQ';
+    window.open(anthemUrl, '_blank');
+  }
+</script>
+
 <button onclick="launchConfetti()">🎉 Launch Confetti</button>
 
 <canvas id="confettiCanvas"></canvas>
 
 <script>
-  // -------------------
-  // Confetti
-  // -------------------
+  // Confetti Animation
   const canvas = document.getElementById('confettiCanvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -124,38 +131,36 @@
   let confettiParticles = [];
 
   function launchConfetti() {
-    for(let i=0;i<200;i++){
+    for (let i = 0; i < 200; i++) {
       confettiParticles.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height - canvas.height,
-        r: Math.random()*6 + 4,
-        d: Math.random()*20 + 10,
-        color: `hsl(${Math.random()*360},100%,50%)`,
-        tilt: Math.random()*10 - 10
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * 20 + 10,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        tilt: Math.random() * 10 - 10
       });
     }
     requestAnimationFrame(drawConfetti);
   }
 
   function drawConfetti() {
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    confettiParticles.forEach((p,i)=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    confettiParticles.forEach((p, i) => {
       ctx.beginPath();
       ctx.lineWidth = p.r;
       ctx.strokeStyle = p.color;
-      ctx.moveTo(p.x + p.tilt + p.r/2, p.y);
-      ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r/2);
+      ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+      ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
       ctx.stroke();
-      p.y += (Math.cos(p.d) + 3 + p.r/2)/2;
+      p.y += (Math.cos(p.d) + 3 + p.r / 2) / 2;
       p.tilt += 0.1;
-      if(p.y > canvas.height) confettiParticles.splice(i,1);
+      if (p.y > canvas.height) confettiParticles.splice(i, 1);
     });
-    if(confettiParticles.length>0) requestAnimationFrame(drawConfetti);
+    if (confettiParticles.length > 0) requestAnimationFrame(drawConfetti);
   }
 
-  // -------------------
   // Notifications
-  // -------------------
   function requestNukeNotification() {
     if (!("Notification" in window)) {
       alert("This browser does not support notifications.");
@@ -175,3 +180,4 @@
 
 </body>
 </html>
+
